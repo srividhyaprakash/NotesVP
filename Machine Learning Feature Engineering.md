@@ -1,3 +1,7 @@
+# Please feel free to add more machine learning feature engineering points.
+
+> This is by no means exhaustive.
+> I hope to update all feature engineering methods, including domain specific ones like satellite data, ocean data, latitude and longitutde data as I get to know them. :)
 
 1. Recursive Feature Elimination
 
