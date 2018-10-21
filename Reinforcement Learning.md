@@ -1,5 +1,4 @@
-# Gym-Tensorforce-Learn
-Learning OpenAI Gym and Tensorforce library
+
 
 Reinforcement Learning Notes:
 
