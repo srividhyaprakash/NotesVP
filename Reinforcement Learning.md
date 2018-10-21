@@ -91,7 +91,61 @@ Epsilon-Greedy Strategy:
         We want epsilon a.k.a exploration to be very high in the begining, as we dont know anything about the environment.
         Gradually decrease it to make the environment more exploitative. 
 
+Value-based Methods:
+    Deep Q Learning (DQN):
     
+        Q Learning is primarily maintaining a 2-D matrix with the rows representing the states and the columns the actions. 
+        The value at the cell of the 2-D matrix is how desirable it is to take that action in that particular state.
+      
+        Motivation for DQN-
+            As you deal with more and more complex problems, your state space tends to grow exponentitally and maintaining a 2D matrix becomes inefficient and infeasible. 
+            Instead, iteratively, we could come up with a function that tries to approximate the action value for each row and then, generalizing more, come up with a function that approximates the entire 2D matrix. Enter neural networks.
+            
+            In the past we have seen that Neural Networks have been notoriously good in approximation and trying to come up with functions for a given input and output. (Function approximators)
+            
+         Algorithm: 
+            Deep Q networks are used for exactly, feed the inputs (pixels if you are playing a game or state of the environment as a list) and pass it through CNN or MLP respectively, and have the number of nodes in the output as the number of actions and a softmax layer at the output to give probabilites for each action and choose the action with the highest probability. 
+         Update based on the following formula:
+         
+         
+            Sample a mini-batch from the experience replay memory.
+                
+                Why we need the experience replay?
+                    Say you are playing a game, games are sequential. Only if you complete first level, can you go the second level and so on,when you feed the first level and ask the NN to learn, it learns, when you do the second level, it learns, but it also forgets what it learnt in the first level. To break this high correlation that we feed to the NN, we sample random mini-batches from our stored experience buffer and ask the NN to learn from that.
+            
+            From the sampled mini-batch, see if that experience (state, action, reward, next_state, done) is a terminal state,
+            meaning, done == True, if true then set the reward fo this experience to just reward or else use,
+            
+            reward + gamma * max(Qnext-state)
+          This would be out target Q values, we calculate the loss based on the current Q values and update our parameters.
+          
+
+   Fixed Q-Networks:
+         
+         In the above case, we see that we are kind of chasing a moving reward, that is we are both updating the same Q networks weights and at the same time, trying the reach the same Q networks values, hence chasing a moving target.
+         
+         Solution, Simple: Don't move it for some time. Hence Fixed Q networks, i.e copy your target Q network to a separate memory. Try to reach that, and once in a while, copy your current Q network weights to that target Q network. 
+
+   Double DQN's:
+            
+        Motivation:
+        We are just naively thinking that the best action possible in the next-state is the one with the highest action value. What if that is wrong?
+        
+        Solution:
+            It can be wrong and so use a DQN for that also. Hence double DQN.
+            
+   Duelling DQN:
+    
+        Just like the softmax layer, which gives us a probability of the best actions, (the probabilities sum upto 1) so it's kind of relative and we have a better perception about which action to take, we have the advantage function. The Advantage function is based on relative terms and it tells us how good it is to perform and what would be the difference in reward over other action.
+        
+        There is no change in updation algorithm, but now our CNN or MLP wil get split in the final layer, where one evaluates the value function of the state V(s) and another branch tells us the goodness of each action. We combine these two in the aggregation layer and finally have our result.
+        
+        
+   Prioritized Experience Replay:
+   
+        In our experience buffer, it can so happen that some of the experiences are more important and hence need to be sampled regularly than the other ones. Previously we just sampled from the experience buffer uniformly. 
+        This causes an issue. In updating. We need to update slowly as we are now sampling certain experiences more so than the others. If we update the experiences uniformly, we might run into the problem of over-fitting to the prioritiy sampled experiences.
+        
 Aside:
      
      1. Reinforcement Learning's (RL) major theoretical components are trial and error and optimal control. RL's trial and error should not be confused with Supervised Learning's trial and error where in supervised learning, we try to predict the final value through random initial weights and propagate back the error. This isnt trial and error. This is feedback. RL takes different actions for the same state (exploration) at different timesteps and evaluates the best action to take once converged.
