@@ -34,9 +34,9 @@ Episodic:
     
     states come to a halt. i.e states terminate after a certain number of timesteps. For example, cluster tool once all the wafes have been processed.
     
-Non-episodic: 
+Non-episodic (continuous): 
     
-    states don't come to a halt. i.e states do not terminate. For example, robot learning to walk.si
+    states don't come to a halt. i.e states do not terminate. For example, robot learning to walk.
 Off-policy: 
     
     The agent learns about the action-value function a = max Q(s,a,θ) while following the behaviour distribution thereby ensuring adequate exploration.
@@ -53,7 +53,45 @@ Evolutionary Algorithms:
     
     This closely resembles biological evolution. Survival of the fittest kind. 
 
+Monte-Carlo:
+    
+    Rewards are collected at the end of an episode and the next episode begins with the new knowledge.
+    Update happens based on the following formula.
+    
+    V(St) = V(St) + alpha * (Gt - V(St))         --------> Vanilla Q-learning algorithm (Monte-carlo way)
+    where 
+        alpha = learning rate (LR is how quickly we want to forget the older estimated q value for this (s,a) pair. Lesser = forget slowly
+        V(St) = Value function for state St, the current state
+        Gt = Total Discounted reward
+    
+Temporal Difference (TD):
+    
+    Unlike Monte-Carlo methods, learning happens at each time step. This means that the value function at each state gets updated at that time-step. This is also TD(0).
+    
+    Update happens based on the following formula.
+     
+    V(St) = V(St) + alpha * (Rt+1 + gamma * V(St+1) - V(St))    --------> Vanilla Q-learning algorithm (TD way)
+    where 
+        alpha = learning rate (LR is how quickly we want to forget the older estimated q value for this (s,a) pair.  Lesser = forget slowly
+        gamma = discount factor
+        V(St+1) = Value function for state St+1, the next state
+        V(St) = Value function for state St, the current state
+        Gt = Total Discounted reward
 
+Epsilon-Greedy Strategy:
+    
+    We set  1. a min-epsilon value. 0.1
+            2. a max-epsilon value: 1.0
+            3. decay rate: Typically set to 0.01
+            4. Epsilon: Typically set to 1 in the beginning 
+    Then we update epsilon at the end of each episode. Note: Update is done at the end of each episode. 
+    epsilon = min_epsilon + (max_epsilon - min_epsilon)*np.exp(-decay_rate*episode)
+    
+    Theory:
+        We want epsilon a.k.a exploration to be very high in the begining, as we dont know anything about the environment.
+        Gradually decrease it to make the environment more exploitative. 
+
+    
 Aside:
      
      1. Reinforcement Learning's (RL) major theoretical components are trial and error and optimal control. RL's trial and error should not be confused with Supervised Learning's trial and error where in supervised learning, we try to predict the final value through random initial weights and propagate back the error. This isnt trial and error. This is feedback. RL takes different actions for the same state (exploration) at different timesteps and evaluates the best action to take once converged.
