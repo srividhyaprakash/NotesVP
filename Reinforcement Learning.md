@@ -128,10 +128,11 @@ Value-based Methods:
    Double DQN's:
             
         Motivation:
-        We are just naively thinking that the best action possible in the next-state is the one with the highest action value. What if that is wrong?
-        
-        Solution:
-            It can be wrong and so use a DQN for that also. Hence double DQN.
+    we just naively get the next best action from the same neural network that we are trying to improve.
+    
+    Solution:
+        It can be wrong and so use the target_DQN for predicting the best action in the next state, intuitively we are trying to get there, so this makes sense. Hence double DQN.
+
             
    Duelling DQN:
     
