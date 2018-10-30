@@ -1,0 +1,9 @@
+https://medium.com/cracking-the-data-science-interview/greedy-algorithm-and-dynamic-programming-a8c019928405
+Cheatsheet DB: https://startupsventurecapital.com/essential-cheat-sheets-for-machine-learning-and-deep-learning-researchers-efb6a8ebd2e5
+https://towardsdatascience.com/@artem.oppermann
+
+https://medium.freecodecamp.org/an-introduction-to-deep-q-learning-lets-play-doom-54d02d8017d8
+https://www.youtube.com/channel/UC8XuSf1eD9AF8x8J19ha5og
+https://medium.com/@jianzhang_23841/a-comprehensive-summary-and-categorization-on-reinforcement-learning-papers-at-icml-2018-787f899b14cb
+
+https://towardsdatascience.com/intuit-and-implement-batch-normalization-c05480333c5b
