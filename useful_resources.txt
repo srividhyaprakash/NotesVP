@@ -7,3 +7,7 @@ https://www.youtube.com/channel/UC8XuSf1eD9AF8x8J19ha5og
 https://medium.com/@jianzhang_23841/a-comprehensive-summary-and-categorization-on-reinforcement-learning-papers-at-icml-2018-787f899b14cb
 
 https://towardsdatascience.com/intuit-and-implement-batch-normalization-c05480333c5b
+
+
+Git and github youtube series
+https://www.youtube.com/watch?v=KLEDKgMmbBI&index=3&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx
