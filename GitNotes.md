@@ -4,7 +4,7 @@ git add <filename1> <filename2> - Add those files you have mentioned
 
 git commit - commits the file - stages the file. You need to write a message. 
 git commit -m "Message goes here" - write the message inline 
-
+git commit --amend -m "New commit message goes here" - Command to change the commit message. Do this only if you have NOT pushed to the remote repository already. 
 
 Always do a pull before pushing on to the remote repo
 
@@ -13,6 +13,8 @@ git push origin master
 
 
 git diff - Shows all the modifications that are not committed across all the files
+
+git status - Shows the status of all the files, whether they are untracked, tracked, modified.
 
 Dealing with branches:
 
@@ -34,6 +36,23 @@ git cherry-pick <first 7-8 alphanumeric values of the hash> - Copies whatever wo
 git reset --soft <first 7-8 alphanumeric values of the hash>
 git reset --hard <first 7-8 alphanumeric values of the hash>
 git reset --mixed (default)
+
+
+Merging a branch:
+
+1. Be in master and pull all changes. 
+2. git branch --merged - Branches that have been merged so far (Used more for keeping track)
+3. git merge <branchname> - Merge the branch on the master
+4. git push origin master - Push the master to the remote repo
+5. We still need to delete the branch from the local repo and the remote repo. 
+
+
+
+Deleting a branch: 
+
+git branch -d <branchname> - Delete branch locally
+git push origin --delete <branchname> - Delete branch remotely
+
 
 
 git clean -df - Clean up and not commit all untracked files
@@ -58,6 +77,11 @@ example: git stash drop stash@{0}
 
 
 git stash drop - Drop all the stashed work 
+
+
+git reflog - Every activity we have done so far with respect to this repository. 
+
+
 
 
 
