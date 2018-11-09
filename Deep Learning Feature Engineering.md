@@ -4,3 +4,11 @@
 
   tf.layers.batch_normalization() 
   tf.contrib.layers.batch_norm() - Either of these two can be used. 
+
+
+2. Training procedure introduced by Alex Krizhevsky:
+	
+	Set learning rate to whatever intial value you would like. Once validation accuracy stops increases or conversely validation loss stop decreasing, reduce the learning rate by a factor of 10. Keep repeating this procedure until your learning rate is 1% of the initially set value. 
+
+	This kind of seems like weight decay but on a manual basis, helps understand the model you have built better.
+	Note: This could potentially cause the model to overfit (say in kaggle competitions).
