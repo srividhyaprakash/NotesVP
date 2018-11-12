@@ -1,0 +1,16 @@
+What I understood from, Startup Ventures
+
+Epsiode 1: Brian Chesky, CEO and co-founder of Airbnb
+
+Handcraft your product, literally go around every single user you have in your early days and ask them what they want out of your platform.
+
+First do it manually, if you are doing it more than 10 times a day, automate it.  (Like uploading photos of Airbnb homes was done manually by their first Intern, then they automated it)
+
+Focus on the 20% of the handcrafted experience that would attract the 80%. Make the 20% the best.
+
+Once scaled, adding new features would be tough, go back to satisying the single user and then see what features of impressing that single user you can build onto the platform and scale.
+
+Satisying the initial customers is about creativity, with scaling comes the analytical mindset.
+
+Reif Hoffman - In order to do things that scale, you need to do things that don't scale
+

@@ -12,3 +12,5 @@
 
 	This kind of seems like weight decay but on a manual basis, helps understand the model you have built better.
 	Note: This could potentially cause the model to overfit (say in kaggle competitions).
+
+3. When stuck with CNN's and looking to improve accuracy, try a global average pooling layer towards the end instead of a fully connected layer + dropout. Also try global average pooling layer + dropout. (Global average pooling layer inherently acts as a regularizer).
