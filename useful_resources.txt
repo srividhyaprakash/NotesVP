@@ -1,3 +1,17 @@
+11.14.2018
+https://help.github.com/articles/syncing-a-fork/
+
+
+
+11.13.2018
+https://www.firsttimersonly.com/
+https://firstcontributions.github.io/
+https://opensource.guide/how-to-contribute/
+
+11.12.2018
+https://stackoverflow.com/questions/26745519/converting-dictionary-to-json-in-python
+https://stackoverflow.com/questions/22005911/convert-columns-to-string-in-pandas
+
 11.08.2018
 https://mlbook.explained.ai/prep.html
 

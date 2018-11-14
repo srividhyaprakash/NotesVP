@@ -82,6 +82,51 @@ git stash drop - Drop all the stashed work
 git reflog - Every activity we have done so far with respect to this repository. 
 
 
+OSS workflows
+
+Contributing to OSS
+
+1. Fork the project.
+2. Clone the forked repo. 
+	git clone <forked-repo-link>
+3. create a branch. 
+	git checkout -b <branch-name>
+4. Work on the branch
+5. Commit the branch to forked repo.
+	git add .
+	git commit -m "Message"
+	git push origin <branch-name>
+6. Create a pull request.
+7. Wait for it to be accepted. 
+8. Done.
+
+
+Deleting local branch and remote branch once pull request accepted.
+
+1. Go to master branch in local repo.
+	git checkout master
+2. Merge the local branch onto local master
+	git mergre <branch-name> master
+3. Delete the local branch
+	git branch -d <branch-name>
+4. Delete the branch from remote repo
+	git push origin --delete <branc-name>
+
+
+Syncing your forked repo with the original repo.
+
+1. Add upstream of the original repo
+	git remote add upstream <original-repo-link>
+2. Fetch the upstream repo to your local repo
+	git fetch upstream
+3. Checkout local master
+	git checkout master
+4. Merge local master with upstream master
+	git merge upstream/master
+5. At this point, your local master is in sync with the master of original repo, 
+	but not the forked repo (i.e your remote repo)
+6. To do so, 
+	git push origin master.
 
 
 
